@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lian Trade Academy — Payment</title>
+  <style>
+    :root{
+      --bg:#070b16;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(0,0,0,.22);
+      --stroke: rgba(255,255,255,.12);
+      --text:#eaf0ff;
+      --muted:#a9b6d8;
+      --accent:#4da3ff;
+      --accent2:#7c5cff;
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --shadow: 0 18px 70px rgba(0,0,0,.6);
+      --r: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background: radial-gradient(900px 500px at 15% 15%, rgba(124,92,255,.22), transparent 60%),
+                  radial-gradient(900px 500px at 85% 30%, rgba(77,163,255,.20), transparent 55%),
+                  radial-gradient(700px 500px at 50% 95%, rgba(34,197,94,.12), transparent 60%),
+                  var(--bg);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    /* animated background glow */
+    .glow{
+      position:fixed;
+      inset:-40%;
+      background: conic-gradient(from 180deg, rgba(77,163,255,.20), rgba(124,92,255,.18), rgba(34,197,94,.12), rgba(77,163,255,.20));
+      filter: blur(60px);
+      opacity:.35;
+      animation: spin 10s linear infinite;
+      pointer-events:none;
+      z-index:-1;
+    }
+    @keyframes spin { to { transform: rotate(360deg);} }
+
+    .wrap{
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 28px 14px 40px;
+    }
+
+    .top{
+      display:flex;
+      gap:14px;
+      justify-content:space-between;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-bottom: 14px;
+      animation: drop .55s ease both;
+    }
+    @keyframes drop{
+      from { transform: translateY(-10px); opacity:0; }
+      to { transform: translateY(0); opacity:1; }
+    }
+
+    .brand h1{
+      margin:0;
+      font-size: 20px;
+      letter-spacing:.2px;
+    }
+    .brand p{
+      margin:6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      max-width: 720px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--stroke);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid var(--stroke);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      animation: rise .6s ease both;
+    }
+    @keyframes rise{
+      from { transform: translateY(14px); opacity:0; }
+      to { transform: translateY(0); opacity:1; }
+    }
+
+    .cardHeader{
+      padding: 16px 16px 12px;
+      background: rgba(0,0,0,.18);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .cardHeader h2{
+      margin:0;
+      font-size: 15px;
+      letter-spacing:.2px;
+    }
+    .cardHeader p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .cardBody{ padding: 16px; }
+
+    .steps{
+      display:grid;
+      gap: 10px;
+    }
+    .step{
+      display:flex;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      transition: transform .15s ease, border-color .2s ease;
+    }
+    .step:hover{
+      transform: translateY(-1px);
+      border-color: rgba(77,163,255,.28);
+    }
+    .n{
+      width: 26px; height: 26px;
+      border-radius: 999px;
+      display:grid; place-items:center;
+      background: rgba(77,163,255,.18);
+      border: 1px solid rgba(77,163,255,.22);
+      color: #dbeafe;
+      font-weight: 900;
+      font-size: 12px;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .step b{ display:block; font-size: 13px; margin-bottom: 2px; }
+    .step span{ color: var(--muted); font-size: 12.5px; line-height:1.35; }
+
+    label{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+    input, select, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      outline:none;
+      background: rgba(8,14,26,.72);
+      color: var(--text);
+      font-size: 14px;
+      transition: border-color .2s ease, transform .08s ease;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(77,163,255,.45);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .grid2.mt{
+      margin-top: 12px;
+    }
+    @media (max-width: 620px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .hint{
+      margin-top: 7px;
+      font-size: 12px;
+      color: rgba(169,182,216,.95);
+      line-height: 1.35;
+    }
+
+    .row{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .btn{
+      cursor:pointer;
+      border:none;
+      border-radius: 999px;
+      padding: 12px 14px;
+      font-weight: 900;
+      font-size: 13px;
+      color:#061024;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      box-shadow: 0 12px 26px rgba(77,163,255,.22);
+      transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      -webkit-user-select:none;
+      user-select:none;
+    }
+    .btn:hover{
+      filter: brightness(1.06);
+      box-shadow: 0 14px 30px rgba(77,163,255,.26);
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn.secondary{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow:none;
+    }
+    .btn.small{ padding: 9px 12px; }
+
+    .pill{
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      align-items:center;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .pill strong{ font-size: 13px; }
+    .code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+      font-size: 13px;
+      color: #dbeafe;
+      font-weight: 900;
+      letter-spacing:.3px;
+    }
+
+    .divider{
+      height: 1px;
+      background: rgba(255,255,255,.10);
+      margin: 14px 0;
+    }
+
+    .statusLine{
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .tag.ok{ color:#bbf7d0; border-color: rgba(34,197,94,.25); background: rgba(34,197,94,.10); }
+    .tag.warn{ color:#fde68a; border-color: rgba(245,158,11,.28); background: rgba(245,158,11,.10); }
+    .tag.bad{ color:#fecaca; border-color: rgba(239,68,68,.30); background: rgba(239,68,68,.10); }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(10,16,30,.92);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      display:none;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      max-width: 92vw;
+      z-index: 10;
+    }
+    .toast.show{ display:block; }
+
+    /* loading overlay */
+    .overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index: 20;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+    .overlay.show{ display:flex; }
+    .loaderCard{
+      width:min(520px, 92vw);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(12,18,36,.92);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .spinner{
+      width: 34px; height: 34px;
+      border-radius: 999px;
+      border: 4px solid rgba(255,255,255,.12);
+      border-top-color: rgba(77,163,255,.9);
+      animation: spin2 .8s linear infinite;
+      margin-bottom: 12px;
+    }
+    @keyframes spin2{ to{ transform: rotate(360deg);} }
+
+    /* success screen */
+    .screen{ display:none; }
+    .screen.show{ display:block; animation: pop .35s ease both; }
+    @keyframes pop{
+      from{ transform: scale(.98); opacity:0; }
+      to{ transform: scale(1); opacity:1; }
+    }
+    .successBox{
+      border-radius: 18px;
+      border: 1px solid rgba(34,197,94,.25);
+      background: rgba(34,197,94,.10);
+      padding: 14px;
+      display:grid;
+      gap: 10px;
+    }
+    .check{
+      width: 44px; height: 44px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.18);
+      border: 1px solid rgba(34,197,94,.25);
+      display:grid; place-items:center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #bbf7d0;
+    }
+
+    .fineprint{
+      font-size: 12px;
+      color: rgba(169,182,216,.95);
+      line-height: 1.45;
+    }
+    .mt{
+      margin-top: 12px;
+    }
+    .mt6{
+      margin-top: 6px;
+    }
+    .mt12{
+      margin-top: 12px;
+    }
+    a{ color:#9dd1ff; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .statusFlex{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .block {
+      display: block;
+    }
+    #statusMsg {
+      margin-top: 8px;
+    }
+    .accountHolder {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow"></div>
+
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <h1>Lian Trade Academy — Payment</h1>
+        <p>
+          Pay using Vodacom <b>Lipa Namba</b>, then paste your transaction SMS/message.
+          After you submit, we confirm payment and approve you (then we share the Telegram link).
+        </p>
+      </div>
+      <div class="badge">Secure • Manual Verification • Fast Approval</div>
+    </div>
+
+    <div class="grid">
+      <!-- LEFT: FORM SCREEN -->
+      <section class="card screen show" id="formScreen">
+        <div class="cardHeader">
+          <h2>Submit Payment Proof</h2>
+          <p>Fill the form correctly. When you submit, it will send to our email and open WhatsApp message automatically.</p>
+        </div>
+        <div class="cardBody">
+          <!-- NOTE: Replace the email in action below -->
+          <form id="payForm"
+                action="https://formsubmit.co/liantradeacademy@gmail.com"
+                method="POST">
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_subject" value="Lian Trade Academy - Payment Proof">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <!-- Optional redirect (works when hosted online) -->
+            <input type="hidden" name="_next" value="success.html">
+
+            <div class="grid2">
+              <div>
+                <label>Full Name</label>
+                <input id="fullName" name="Full Name" placeholder="e.g. Derick Mushi" required>
+              </div>
+              <div>
+                <label>WhatsApp Number</label>
+                <input id="phone" name="WhatsApp Number" placeholder="e.g. 2557XXXXXXXX" required>
+                <div class="hint">Tip: use country code 255.</div>
+              </div>
+            </div>
+
+            <div class="grid2 mt">
+              <div>
+                <label for="plan">Select Plan</label>
+                <select id="plan" name="Plan" aria-label="Select Plan" required>
+                  <option value="">-- Choose --</option>
+                  <option>Education Only</option>
+                  <option>Signals Only</option>
+                  <option>Education + Signals (Premium)</option>
+                </select>
+              </div>
+              <div>
+                <label>Amount Paid (TZS)</label>
+                <input id="amount" name="Amount Paid" type="number" placeholder="e.g. 20000" required>
+              </div>
+            </div>
+
+            <div class="mt">
+              <label>Transaction Message (Paste SMS)</label>
+              <textarea id="trx" name="Transaction Message" placeholder="Paste the full transaction SMS/message here..." required></textarea>
+              <div class="hint">Include amount, date/time, and transaction/reference ID.</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row">
+              <button class="btn secondary" type="button" id="clearBtn">Clear</button>
+              <button class="btn" type="submit" id="submitBtn">Submit & Send</button>
+            </div>
+
+            <p class="fineprint mt">
+              After submitting, our team will confirm the payment and approve your access.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- LEFT: SUCCESS SCREEN -->
+      <section class="card screen" id="successScreen">
+        <div class="cardHeader">
+          <h2>Submission Received</h2>
+          <p>We’ve received your payment proof. Please wait as we confirm the transaction.</p>
+        </div>
+        <div class="cardBody">
+          <div class="successBox">
+            <div class="statusLine">
+              <div class="statusFlex">
+                <div class="check">✓</div>
+                <div>
+                  <b class="block">Status: Pending Approval</b>
+                  <span class="fineprint">We will verify the transaction and then share the Telegram group link.</span>
+                </div>
+              </div>
+              <span class="tag warn">Pending</span>
+            </div>
+
+            <div class="fineprint">
+              ✅ If WhatsApp opened, please send the message to us (do not edit it).  
+              <br>⏱ Approval time depends on confirmation.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="row">
+            <button class="btn secondary" type="button" id="backBtn">Back to Form</button>
+            <button class="btn" type="button" id="openWaBtn">Open WhatsApp Again</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: PAYMENT INFO -->
+      <aside class="card">
+        <div class="cardHeader">
+          <h2>Pay Using Vodacom Lipa Namba</h2>
+          <p>Pay first, then paste your SMS and submit.</p>
+        </div>
+        <div class="cardBody">
+          <div class="pill">
+            <div>
+              <strong>Lipa Namba</strong>
+              <div class="code" id="lipaNamba">123456</div>
+            </div>
+            <button class="btn small secondary" type="button" id="copyBtn">Copy</button>
+          </div>
+
+          <div class="pill">
+            <div>
+              <strong>CRDB Bank Account</strong>
+              <div class="code" id="crdbAccount">10191113743</div>
+              <div class="accountHolder">DAVID ALLEN MCHOMVU</div>
+            </div>
+            <button class="btn small secondary" type="button" id="copyCrdbBtn">Copy</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="n">1</div>
+              <div><b>Pay with Lipa Namba</b><span>Open M-Pesa/Vodacom → Lipa Namba → enter the number → confirm.</span></div>
+            </div>
+            <div class="step">
+              <div class="n">2</div>
+              <div><b>Copy your SMS</b><span>Copy the full transaction message (reference ID included).</span></div>
+            </div>
+            <div class="step">
+              <div class="n">3</div>
+              <div><b>Submit proof</b><span>Paste the SMS in the form and submit for approval.</span></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="statusLine">
+            <div><b>Status</b></div>
+            <span class="tag" id="statusTag">Not submitted</span>
+          </div>
+          <div class="fineprint" id="statusMsg">
+            Fill and submit the form to send payment proof.
+          </div>
+
+          <p class="fineprint mt12">
+            Telegram link is shared after approval to avoid fake submissions.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- loading overlay -->
+  <div class="overlay" id="overlay">
+    <div class="loaderCard">
+      <div class="spinner"></div>
+      <b>Submitting…</b>
+      <div class="fineprint mt6">
+        Sending your proof and opening WhatsApp message.
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // ======================
+    // ✅ EDIT THESE 3 VALUES
+    // ======================
+    const LIPA_NAMBA = "58892429";                 // your Vodacom Lipa Namba
+    const YOUR_EMAIL = "liantradeacademy@gmail.com"; // your email to receive submissions
+    const YOUR_WHATSAPP = "+255 749 652 933";        // your WhatsApp number (no +)
+
+    // Apply email into form action
+    const form = document.getElementById("payForm");
+    form.action = "https://formsubmit.co/" + encodeURIComponent(YOUR_EMAIL);
+
+    // Elements
+    const lipaEl = document.getElementById("lipaNamba");
+    const copyBtn = document.getElementById("copyBtn");
+    const crdbAccount = document.getElementById("crdbAccount");
+    const copyCrdbBtn = document.getElementById("copyCrdbBtn");
+    const toastEl = document.getElementById("toast");
+    const overlay = document.getElementById("overlay");
+
+    const clearBtn = document.getElementById("clearBtn");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const fullName = document.getElementById("fullName");
+    const phone = document.getElementById("phone");
+    const plan = document.getElementById("plan");
+    const amount = document.getElementById("amount");
+    const trx = document.getElementById("trx");
+
+    const statusTag = document.getElementById("statusTag");
+    const statusMsg = document.getElementById("statusMsg");
+
+    const formScreen = document.getElementById("formScreen");
+    const successScreen = document.getElementById("successScreen");
+    const backBtn = document.getElementById("backBtn");
+    const openWaBtn = document.getElementById("openWaBtn");
+
+    lipaEl.textContent = LIPA_NAMBA;
+
+    function toast(msg){
+      toastEl.textContent = msg;
+      toastEl.classList.add("show");
+      clearTimeout(window.__t);
+      window.__t = setTimeout(()=> toastEl.classList.remove("show"), 2500);
+    }
+
+    function setStatus(type, title, message){
+      statusTag.className = "tag";
+      if(type === "warn") statusTag.classList.add("warn");
+      if(type === "ok") statusTag.classList.add("ok");
+      if(type === "bad") statusTag.classList.add("bad");
+      statusTag.textContent = title;
+      statusMsg.textContent = message;
+    }
+
+    function validate(){
+      const nameOk = fullName.value.trim().length >= 3;
+      const phoneOk = /^[0-9+ ]{9,16}$/.test(phone.value.trim());
+      const planOk = plan.value.trim().length > 0;
+      const amountOk = /^[0-9]{3,}$/.test(String(amount.value).trim());
+      const msgOk = trx.value.trim().length >= 20;
+
+      [fullName, phone, plan, amount, trx].forEach(el => el.style.borderColor = "rgba(255,255,255,.10)");
+      if(!nameOk) fullName.style.borderColor = "rgba(239,68,68,.65)";
+      if(!phoneOk) phone.style.borderColor = "rgba(239,68,68,.65)";
+      if(!planOk) plan.style.borderColor = "rgba(239,68,68,.65)";
+      if(!amountOk) amount.style.borderColor = "rgba(239,68,68,.65)";
+      if(!msgOk) trx.style.borderColor = "rgba(239,68,68,.65)";
+
+      return nameOk && phoneOk && planOk && amountOk && msgOk;
+    }
+
+    function buildWhatsAppMessage(){
+      const now = new Date().toLocaleString();
+      return `Lian Trade Academy PAYMENT PROOF
+
+Time: ${now}
+Name: ${fullName.value.trim()}
+WhatsApp: ${phone.value.trim()}
+Plan: ${plan.value.trim()}
+Amount: ${String(amount.value).trim()} TZS
+Lipa Namba: ${LIPA_NAMBA}
+
+Transaction Message:
+${trx.value.trim()}`;
+    }
+
+    function openWhatsApp(){
+      const msg = buildWhatsAppMessage();
+      const url = `https://wa.me/${YOUR_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank", "noopener");
+      localStorage.setItem("lta_last_whatsapp_msg", msg);
+    }
+
+    copyBtn.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(LIPA_NAMBA);
+        toast("Lipa Namba copied ✅");
+      }catch(e){
+        toast("Copy failed (browser).");
+      }
+    });
+
+    copyCrdbBtn.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(crdbAccount.textContent);
+        toast("CRDB Account number copied ✅");
+      }catch(e){
+        toast("Copy failed (browser).");
+      }
+    });
+
+    clearBtn.addEventListener("click", () => {
+      form.reset();
+      [fullName, phone, plan, amount, trx].forEach(el => el.style.borderColor = "rgba(255,255,255,.10)");
+      toast("Form cleared.");
+    });
+
+    // Submit behavior:
+    // - validate
+    // - open WhatsApp
+    // - show loading
+    // - then allow FormSubmit to send email normally
+    form.addEventListener("submit", (e) => {
+      if(!validate()){
+        e.preventDefault();
+        setStatus("bad","Fix errors","Please fill all fields correctly, then submit again.");
+        toast("Fix highlighted fields ❗");
+        return;
+      }
+
+      // Save status locally (for UI)
+      localStorage.setItem("lta_status", "pending");
+      setStatus("warn","Pending","Submitted. Please wait for confirmation.");
+
+      // Open WhatsApp message
+      openWhatsApp();
+
+      // Show loading overlay briefly + show success screen
+      overlay.classList.add("show");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      // Let form submit to FormSubmit (email)
+      // But we also switch to success UI quickly for better experience
+      setTimeout(() => {
+        overlay.classList.remove("show");
+        formScreen.classList.remove("show");
+        successScreen.classList.add("show");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit & Send";
+      }, 900);
+    });
+
+    backBtn.addEventListener("click", () => {
+      successScreen.classList.remove("show");
+      formScreen.classList.add("show");
+    });
+
+    openWaBtn.addEventListener("click", () => {
+      const saved = localStorage.getItem("lta_last_whatsapp_msg");
+      if(saved){
+        const url = `https://wa.me/${YOUR_WHATSAPP}?text=${encodeURIComponent(saved)}`;
+        window.open(url, "_blank", "noopener");
+      }else{
+        openWhatsApp();
+      }
+    });
+
+    // Load saved status on refresh
+    (function init(){
+      const st = localStorage.getItem("lta_status");
+      if(st === "pending"){
+        setStatus("warn","Pending","We received your details. Please wait for confirmation.");
+      }else{
+        setStatus("", "Not submitted", "Fill and submit the form to send payment proof.");
+      }
+    })();
+  </script>
+</body>
+</html>

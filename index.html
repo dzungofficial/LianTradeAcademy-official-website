@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Bio Link</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0b1c24;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* ===== Animated Background ===== */
+        .bg {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background:
+                linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-40px, -40px);
+            }
+        }
+
+        /* Floating numbers */
+        .number {
+            position: absolute;
+            color: rgba(0, 255, 204, 0.25);
+            font-size: 14px;
+            animation: floatUp 10s linear infinite;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+        }
+
+        /* ===== Main Card ===== */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.2);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #00ffcc, #009977);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 15px;
+            box-shadow: 0 0 20px #00ffcc;
+            animation: pulse 2s infinite;
+            overflow: hidden;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px #00ffcc;
+            }
+
+            50% {
+                box-shadow: 0 0 30px #00ffcc;
+            }
+
+            100% {
+                box-shadow: 0 0 10px #00ffcc;
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .links a {
+            display: block;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 12px 0;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .links a:hover {
+            background: #00ffcc;
+            color: #000;
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .number-1 {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .number-2 {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .number-3 {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .number-4 {
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .number-5 {
+            left: 90%;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg"></div>
+
+    <!-- Floating market numbers -->
+    <div class="number number-1">1.2345</div>
+    <div class="number number-2">BTC 68234</div>
+    <div class="number number-3">EUR/USD</div>
+    <div class="number number-4">+2.45%</div>
+    <div class="number number-5">NASDAQ</div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="profile"><img src="your-logo.jpeg" alt="Profile Logo"></div>
+
+        <h1>LianTradeAcademy</h1>
+        <p class="tagline">Forex & Crypto Trader | Smart Money Concepts</p>
+
+        <div class="links">
+            <a href="payment.html"><i class="fas fa-paper-plane"></i> Join My Telegram Signals</a>
+            <a href="https://www.youtube.com/@LianAcademy1"><i class="fab fa-youtube"></i> YouTube Trading Lessons</a>
+            <a href="https://chat.whatsapp.com/DkCwr423Tur1LqcONTMDr2?mode=ems_copy_t"><i class="fab fa-whatsapp"></i> WhatsApp Trading Community</a>
+            <a href="https://deriv.partners/rx?sidc=4C462192-E6A2-45A1-B35D-E190B2FDB3AC&utm_campaign=dynamicworks&utm_medium=affiliate&utm_source=CU153100"><i class="fas fa-chart-line"></i> Trade With My Broker</a>
+            <a href="https://liantradeacademy.blogspot.com/2026/01/how-the-forex-market-works.html"><i class="fas fa-book"></i> Free Trading Course</a>
+        </div>
+
+        <footer>
+            ⚠️ Trading involves risk. Trade responsibly.
+        </footer>
+    </div>
+
+</body>
+
+</html>
