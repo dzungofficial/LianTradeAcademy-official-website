@@ -1,80 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LianTradeAcademy - Professional Forex Trading Education</title>
-    <meta name="description" content="Lian Trade Academy — Learn Forex Trading from Beginner to Professional Trader. Basic, Intermediate, Professional levels."/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Lian Trade Academy – Matengenezo</title>
+    <meta name="description" content="Tovuti ya Lian Trade Academy inafanyiwa matengenezo. Tafadhali rudi baadaye.">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ===== COLOR MODE VARIABLES ===== */
-        :root {
-            /* Dark Mode (Default) */
-            --primary: #2a4d8e;
-            --secondary: #ff6b00;
-            --accent: #00c9b7;
-            --dark: #0a0a1a;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-            --success: #28a745;
-            --danger: #dc3545;
-            --warning: #ffc107;
-            --info: #17a2b8;
-            --shadow: 0 18px 60px rgba(0,0,0,.55);
-            --radius: 22px;
-            --max: 1100px;
-            --text: rgba(255,255,255,.92);
-            --muted: rgba(255,255,255,.72);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --header-bg: rgba(10, 10, 26, 0.9);
-            --footer-bg: rgba(5, 5, 15, 0.95);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --hero-gradient: linear-gradient(135deg, rgba(42, 77, 142, 0.9) 0%, rgba(26, 58, 122, 0.9) 100%);
-            --background-container: var(--dark);
-            --graph-color: rgba(42, 157, 143, 0.2);
-            --candle-color: rgba(255, 107, 53, 0.2);
-            --particle-color: rgba(42, 157, 143, 0.4);
-            --grid-color: rgba(255, 255, 255, 0.02);
-            --ticker-bg: rgba(255, 107, 53, 0.1);
-            --ticker-text: rgba(255, 255, 255, 0.5);
-            --bio-bg: linear-gradient(135deg, #0b1c24 0%, #0a1520 100%);
-            --bio-card-bg: rgba(0, 0, 0, 0.4);
-        }
-
-        .light-mode {
-            /* Light Mode Variables */
-            --primary: #3a6cd6;
-            --secondary: #ff7b1a;
-            --accent: #00d9c5;
-            --dark: #ffffff;
-            --light: #0a0a1a;
-            --gray: #6c757d;
-            --success: #28a745;
-            --danger: #dc3545;
-            --warning: #ffc107;
-            --info: #17a2b8;
-            --shadow: 0 18px 60px rgba(0,0,0,.15);
-            --radius: 22px;
-            --max: 1100px;
-            --text: rgba(0,0,0,.92);
-            --muted: rgba(0,0,0,.72);
-            --card-bg: rgba(0, 0, 0, 0.05);
-            --header-bg: rgba(255, 255, 255, 0.95);
-            --footer-bg: rgba(240, 240, 240, 0.95);
-            --border-color: rgba(0, 0, 0, 0.1);
-            --hero-gradient: linear-gradient(135deg, rgba(58, 108, 214, 0.9) 0%, rgba(42, 77, 142, 0.9) 100%);
-            --background-container: #f5f7fa;
-            --graph-color: rgba(42, 157, 143, 0.3);
-            --candle-color: rgba(255, 107, 53, 0.3);
-            --particle-color: rgba(42, 157, 143, 0.5);
-            --grid-color: rgba(0, 0, 0, 0.05);
-            --ticker-bg: rgba(255, 107, 53, 0.15);
-            --ticker-text: rgba(0, 0, 0, 0.6);
-            --bio-bg: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-            --bio-card-bg: rgba(255, 255, 255, 0.9);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -82,2245 +15,307 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--dark);
-            overflow-x: hidden;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
-            transition: color 0.5s ease;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--secondary);
-        }
-
-        .container {
-            width: 100%;
-            max-width: var(--max);
-            margin: 0 auto;
-            padding: 0 22px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-family: 'Poppins', sans-serif;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.7s ease;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-            border: 1px solid rgba(255, 107, 0, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: #e05a00;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
-        }
-
-        .btn-secondary {
-            background-color: var(--primary);
-            color: white;
-            border: 1px solid rgba(42, 77, 142, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background-color: #1e3a6e;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(42, 77, 142, 0.3);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--text);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
-
-        .section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-        }
-
-        .section-title p {
-            color: var(--muted);
-            font-size: 1.1rem;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            padding: 24px;
-        }
-
-        .card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 107, 0, 0.3);
-        }
-
-        /* ===== COLOR MODE TOGGLE BUTTON (FLOATING) ===== */
-        .color-mode-float {
-            position: fixed;
-            bottom: 100px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background: var(--card-bg);
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text);
-            font-size: 1.5rem;
-            z-index: 997;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        .color-mode-float:hover {
-            transform: scale(1.1) rotate(15deg);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            background: var(--primary);
-            color: white;
-        }
-
-        .light-mode .color-mode-float:hover {
-            background: var(--secondary);
-        }
-
-        .color-mode-float .fa-sun {
-            display: none;
-        }
-
-        .light-mode .color-mode-float .fa-sun {
-            display: block;
-        }
-
-        .light-mode .color-mode-float .fa-moon {
-            display: none;
-        }
-
-        /* ===== ANIMATED BACKGROUND ===== */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background-color: var(--background-container);
-            transition: background-color 0.5s ease;
-        }
-
-        .graph-line {
-            position: absolute;
-            width: 200px;
-            height: 100px;
-            border-bottom: 2px solid var(--graph-color);
-            border-left: 2px solid var(--graph-color);
-            transition: border-color 0.5s ease;
-        }
-
-        .graph-line:nth-child(1) {
-            top: 15%;
-            left: 5%;
-            animation: floatGraph 25s infinite linear;
-        }
-
-        .graph-line:nth-child(2) {
-            top: 65%;
-            right: 8%;
-            animation: floatGraph 30s infinite linear reverse;
-        }
-
-        .candle {
-            position: absolute;
-            width: 8px;
-            height: 30px;
-            background: var(--candle-color);
-            border-radius: 2px;
-            transition: background 0.5s ease;
-        }
-
-        .candle::before, .candle::after {
+        /* subtle animated background */
+        body::before {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 2px;
-            background: var(--candle-color);
-            left: -2px;
-            transition: background 0.5s ease;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+            z-index: 0;
         }
 
-        .candle::before { top: 0; }
-        .candle::after { bottom: 0; }
-
-        .candle:nth-child(3) {
-            top: 20%;
-            right: 15%;
-            animation: floatUpDown 8s infinite ease-in-out;
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .candle:nth-child(4) {
-            top: 40%;
-            left: 12%;
-            animation: floatUpDown 10s infinite ease-in-out 1s;
-        }
-
-        .currency-symbol {
-            position: absolute;
-            color: var(--muted);
-            font-size: 40px;
-            font-weight: bold;
-            transition: color 0.5s ease;
-        }
-
-        .currency-symbol:nth-child(6) {
-            top: 10%;
-            right: 20%;
-            animation: floatSymbol 40s infinite linear;
-        }
-
-        .currency-symbol:nth-child(7) {
-            top: 80%;
-            left: 10%;
-            animation: floatSymbol 45s infinite linear reverse;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--particle-color);
-            border-radius: 50%;
-            transition: background 0.5s ease;
-        }
-
-        .particle:nth-child(9) {
-            top: 25%;
-            left: 30%;
-            animation: particleFloat 15s infinite linear;
-        }
-
-        .particle:nth-child(10) {
-            top: 60%;
-            right: 25%;
-            animation: particleFloat 18s infinite linear 1s;
-        }
-
-        .grid-line {
-            position: absolute;
-            background: var(--grid-color);
-            transition: background 0.5s ease;
-        }
-
-        .horizontal {
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
             width: 100%;
-            height: 1px;
-            animation: moveHorizontal 20s infinite linear;
-        }
-
-        .vertical {
-            width: 1px;
-            height: 100%;
-            animation: moveVertical 25s infinite linear;
-        }
-
-        .gradient-orb {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.3;
-        }
-
-        .orb-1 {
-            background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
-            top: -100px;
-            right: -100px;
-            animation: orbFloat 25s infinite alternate ease-in-out;
-        }
-
-        .orb-2 {
-            background: radial-gradient(circle, #2a9d8f 0%, transparent 70%);
-            bottom: -100px;
-            left: -100px;
-            animation: orbFloat 30s infinite alternate-reverse ease-in-out;
-        }
-
-        .ticker-tape {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background: var(--ticker-bg);
-            overflow: hidden;
-            transition: background 0.5s ease;
-        }
-
-        .ticker-content {
-            display: flex;
-            white-space: nowrap;
-            animation: tickerScroll 40s infinite linear;
-        }
-
-        .ticker-item {
-            padding: 0 30px;
-            font-size: 14px;
-            color: var(--ticker-text);
-            transition: color 0.5s ease;
-        }
-
-        @keyframes floatGraph {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(1deg); }
-            50% { transform: translateY(10px) rotate(-1deg); }
-            75% { transform: translateY(-10px) rotate(1deg); }
-        }
-
-        @keyframes floatUpDown {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-30px); }
-        }
-
-        @keyframes floatSymbol {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(50px, 30px) rotate(90deg); }
-            50% { transform: translate(0, 60px) rotate(180deg); }
-            75% { transform: translate(-50px, 30px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        @keyframes moveHorizontal {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100vh); }
-        }
-
-        @keyframes moveVertical {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(100vw); }
-        }
-
-        @keyframes particleFloat {
-            0% { transform: translate(0, 0); opacity: 0.4; }
-            25% { transform: translate(40px, -20px); opacity: 0.8; }
-            50% { transform: translate(80px, 0); opacity: 0.4; }
-            75% { transform: translate(40px, 20px); opacity: 0.8; }
-            100% { transform: translate(0, 0); opacity: 0.4; }
-        }
-
-        @keyframes tickerScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        @keyframes orbFloat {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(50px, 50px) scale(1.2); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.4); }
-        }
-
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background-color: var(--header-bg);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.5s ease;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 32px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
         }
 
         .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
         }
 
-        .logo-img {
-            height: 50px;
-            margin-right: 15px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
+        .logo i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
         }
 
         .logo h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .logo span {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--muted);
-            font-weight: 400;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-left: 25px;
-        }
-
-        .nav-menu a {
-            color: var(--muted);
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-            font-size: 14px;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--text);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text);
-            cursor: pointer;
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            background: var(--hero-gradient);
-            color: var(--text);
-            padding: 160px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTIwMCA4MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBkPSJNMCwwIEwxMjAwLDAgTDEyMDAsODAwIEwwLDgwMCBaIi8+PHBhdGggZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIiBkPSJNMCwwIEMyMDAsMTAwIDQwMCwwIDYwMCwxMDAgQzgwMCwyMDAgMTAwMCwxMDAgMTIwMCwyMDAgTDEyMDAsODAwIEwwLDgwMCBaIi8+PC9nPjwvc3ZnPg==');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            background: linear-gradient(to right, var(--text), var(--muted));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: var(--muted);
-        }
-
-        /* ===== BIO LINK SECTION ===== */
-        .bio-link-section {
-            background: var(--bio-bg);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.5s ease;
-        }
-
-        .bio-link-section::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background:
-                linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: moveGrid 20s linear infinite;
-            top: 0;
-            left: 0;
-        }
-
-        @keyframes moveGrid {
-            from {
-                transform: translate(0, 0);
-            }
-            to {
-                transform: translate(-40px, -40px);
-            }
-        }
-
-        .bio-container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--bio-card-bg);
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 204, 0.2);
-            transition: all 0.5s ease;
-        }
-
-        .bio-profile {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #00ffcc, #009977);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            margin: 0 auto 15px;
-            box-shadow: 0 0 20px #00ffcc;
-            animation: pulse 2s infinite;
-            overflow: hidden;
-        }
-
-        .bio-profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .bio-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin: 25px 0;
-        }
-
-        .bio-link {
-            display: block;
-            background: rgba(0, 255, 204, 0.1);
-            padding: 15px;
-            text-decoration: none;
-            color: var(--text);
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-align: center;
-            border: 1px solid rgba(0, 255, 204, 0.2);
-        }
-
-        .bio-link:hover {
-            background: #00ffcc;
-            color: #000;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px #00ffcc;
-            border-color: #00ffcc;
-        }
-
-        .bio-link i {
-            margin-right: 10px;
-        }
-
-        .bio-footer {
-            margin-top: 20px;
-            font-size: 12px;
-            opacity: 0.7;
-            color: var(--muted);
-        }
-
-        /* ===== COURSES SECTION ===== */
-        .courses-section {
-            background: var(--card-bg);
-            transition: background 0.5s ease;
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .course-level {
-            text-align: center;
-            padding: 30px 20px;
-            height: 100%;
-        }
-
-        .level-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            display: inline-block;
-            padding: 20px;
-            border-radius: 50%;
-            background: rgba(255, 107, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .course-level:hover .level-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: rgba(255, 107, 0, 0.2);
-        }
-
-        .course-level h3 {
-            margin-bottom: 15px;
-        }
-
-        .course-level p {
-            color: var(--muted);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .price-tag {
             font-size: 2rem;
             font-weight: 700;
-            margin: 15px 0;
-            color: var(--secondary);
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
         }
 
-        .course-features {
-            list-style: none;
-            margin: 20px 0;
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        .course-features li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .course-features li:last-child {
-            border-bottom: none;
-        }
-
-        .course-features li i {
-            color: var(--success);
-            margin-right: 10px;
-        }
-
-        /* ===== SWAHILI PROGRAM SECTION ===== */
-        .swahili-program {
-            background: var(--hero-gradient);
-        }
-
-        .swahili-program .section-title h2 {
-            color: var(--text);
-        }
-
-        .swahili-program .card {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .light-mode .swahili-program .card {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        /* ===== FEATURES SECTION ===== */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 30px 20px;
-            height: 100%;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            display: inline-block;
-            padding: 20px;
-            border-radius: 50%;
-            background: rgba(255, 107, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: rgba(255, 107, 0, 0.2);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            color: var(--muted);
-        }
-
-        /* ===== TESTIMONIALS ===== */
-        .testimonials-section {
-            background: var(--card-bg);
-            transition: background 0.5s ease;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            padding: 30px;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
+        .maintenance-icon {
             font-size: 5rem;
-            color: var(--muted);
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            line-height: 1;
+            margin: 1.5rem 0;
+            animation: wrench 2.5s ease-in-out infinite;
         }
 
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--muted);
+        @keyframes wrench {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-10deg); }
         }
 
-        .testimonial-author {
-            display: flex;
-            align-items: center;
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-        }
-
-        .testimonial-author h4 {
-            margin-bottom: 5px;
-        }
-
-        .testimonial-author p {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        /* ===== FAQ ===== */
-        .faq-section {
-            background: var(--card-bg);
-            transition: background 0.5s ease;
-        }
-
-        .faq-grid {
-            display: grid;
-            gap: 15px;
-        }
-
-        .faq-item {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .light-mode .faq-item:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .swahili {
+            color: #60a5fa;
             font-weight: 600;
         }
 
-        .faq-answer {
-            margin-top: 15px;
-            color: var(--muted);
-            display: none;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: var(--footer-bg);
-            color: var(--text);
-            padding: 60px 0 20px;
-            position: relative;
-            border-top: 1px solid var(--border-color);
-            transition: all 0.5s ease;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            margin-bottom: 20px;
+        .english {
+            color: #cbd5e1;
             font-size: 1.2rem;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 2rem;
+            border-bottom: 1px dashed #334155;
+            padding-bottom: 1.5rem;
         }
 
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--secondary);
+        .message-box {
+            background: rgba(0,0,0,0.3);
+            border-left: 4px solid #3b82f6;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
         }
 
-        .footer-links {
-            list-style: none;
+        .message-box p {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .footer-links li {
-            margin-bottom: 10px;
+        .message-box i {
+            color: #3b82f6;
+            width: 24px;
+            text-align: center;
         }
 
-        .footer-links a {
-            color: var(--muted);
-            transition: all 0.3s ease;
-            font-size: 14px;
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
+        .time-block {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            min-width: 90px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .time-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0 1rem;
         }
 
         .social-links a {
+            color: #94a3b8;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--card-bg);
             border-radius: 50%;
-            color: var(--text);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .social-links a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        /* ===== RISK DISCLAIMER ===== */
-        .risk-disclaimer {
-            background-color: rgba(255, 193, 7, 0.1);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .light-mode .risk-disclaimer {
-            background-color: rgba(255, 193, 7, 0.15);
-        }
-
-        .risk-disclaimer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
-            transform: translateX(-100%);
-            animation: disclaimerShine 6s infinite;
-        }
-
-        @keyframes disclaimerShine {
-            0% { transform: translateX(-100%); }
-            50%, 100% { transform: translateX(100%); }
-        }
-
-        .risk-disclaimer h3 {
-            color: var(--warning);
-            margin-bottom: 10px;
-        }
-
-        .risk-disclaimer p {
-            color: var(--warning);
-            margin-bottom: 10px;
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== WHATSAPP FLOAT ===== */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-            z-index: 998;
-            animation: pulse 2s infinite;
+            background: #3b82f6;
+            transform: translateY(-5px);
         }
 
-        .whatsapp-float i {
-            font-size: 28px;
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
         }
 
-        /* ===== CONTACT FORM ===== */
-        .contact-form {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 40px;
-            border: 1px solid var(--border-color);
+        hr {
+            border: none;
+            border-top: 1px solid #334155;
+            margin: 1.5rem 0;
         }
 
-        .form-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            flex: 1;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--muted);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            background-color: var(--card-bg);
-            color: var(--text);
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(42, 77, 142, 0.3);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* ===== MOBILE RESPONSIVENESS ===== */
-        @media (max-width: 992px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--header-bg);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li {
-                margin: 10px 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .color-mode-float {
-                bottom: 90px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero {
-                padding: 120px 0 80px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .bio-container {
-                max-width: 90%;
-                padding: 20px 15px;
-            }
-            
-            .bio-profile {
-                width: 100px;
-                height: 100px;
-                font-size: 30px;
-            }
-            
-            .color-mode-float {
-                bottom: 85px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
-            }
-            
-            .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
-                width: 50px;
-                height: 50px;
-            }
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+            .logo h1 { font-size: 1.5rem; }
+            .maintenance-icon { font-size: 4rem; }
+            .countdown { gap: 0.8rem; }
+            .time-block { padding: 0.8rem 1rem; min-width: 70px; }
+            .time-number { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background Elements -->
-    <div class="background-container">
-        <div class="graph-line"></div>
-        <div class="graph-line"></div>
-        <div class="candle"></div>
-        <div class="candle"></div>
-        <div class="currency-symbol">$</div>
-        <div class="currency-symbol">€</div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="grid-line horizontal" style="top: 20%;"></div>
-        <div class="grid-line horizontal" style="top: 50%;"></div>
-        <div class="grid-line horizontal" style="top: 80%;"></div>
-        <div class="grid-line vertical" style="left: 20%;"></div>
-        <div class="grid-line vertical" style="left: 50%;"></div>
-        <div class="grid-line vertical" style="left: 80%;"></div>
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        
-        <!-- Animated Ticker Tape -->
-        <div class="ticker-tape">
-            <div class="ticker-content">
-                <div class="ticker-item">BTC: $65,432.10 ↗</div>
-                <div class="ticker-item">ETH: $3,456.78 ↗</div>
-                <div class="ticker-item">EUR/USD: 1.0875 ↘</div>
-                <div class="ticker-item">GBP/USD: 1.2742 ↗</div>
-                <div class="ticker-item">XAU/USD: $2,345.60 ↗</div>
-                <div class="ticker-item">NASDAQ: 16,543.21 ↗</div>
-                <div class="ticker-item">BTC: $65,432.10 ↗</div>
-                <div class="ticker-item">ETH: $3,456.78 ↗</div>
-                <div class="ticker-item">EUR/USD: 1.0875 ↘</div>
-                <div class="ticker-item">GBP/USD: 1.2742 ↗</div>
-                <div class="ticker-item">XAU/USD: $2,345.60 ↗</div>
-                <div class="ticker-item">NASDAQ: 16,543.21 ↗</div>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <i class="fas fa-chart-line"></i>
+            <h1>Lian Trade Academy</h1>
+        </div>
+
+        <!-- Animated wrench icon -->
+        <div class="maintenance-icon">
+            <i class="fas fa-tools"></i>
+        </div>
+
+        <!-- Main message -->
+        <h2><span class="swahili">Tunafanya Matengenezo</span></h2>
+        <p class="english">We’re currently performing scheduled maintenance.</p>
+
+        <div class="message-box">
+            <p><i class="fas fa-clock"></i> Tovuti itarudi kwa muda mfupi – The site will be back shortly.</p>
+            <p><i class="fas fa-microphone-alt"></i> Wakati huo huo, sikiliza vipindi vyetu kwenye majukwaa mengine.</p>
+            <p><i class="fas fa-headphones"></i> Tafadhali wasiliana nasi kupitia mitandao ya kijamii au barua pepe.</p>
+        </div>
+
+        <!-- Optional countdown (just for show – can be removed) -->
+        <div class="countdown">
+            <div class="time-block">
+                <div class="time-number">02</div>
+                <div class="time-label">Siku</div>
             </div>
+            <div class="time-block">
+                <div class="time-number">14</div>
+                <div class="time-label">Saa</div>
+            </div>
+            <div class="time-block">
+                <div class="time-number">35</div>
+                <div class="time-label">Dakika</div>
+            </div>
+            <div class="time-block">
+                <div class="time-number">22</div>
+                <div class="time-label">Sekunde</div>
+            </div>
+        </div>
+
+        <!-- Social links (placeholders) -->
+        <div class="social-links">
+            <a href="https://chat.whatsapp.com/DkCwr423Tur1LqcONTMDr2?mode=gi_t" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://youtube.com/@lianacademy1?si=19i1a8pib6XtSCJN" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/liantradeacademy?igsh=MWUwOG16N3l2MmM3cw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@liantradeacademyofficial?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <hr>
+
+        <!-- Contact info -->
+        <div class="footer-note">
+            <i class="fas fa-envelope"></i> liantradeacademy@gmail.com &nbsp;|&nbsp;
+            <i class="fas fa-phone-alt"></i> +255 749 652 933
+        </div>
+        <div class="footer-note" style="margin-top: 0.5rem;">
+            &copy; 2025 Lian Trade Academy. Haki zote zimehifadhiwa.
         </div>
     </div>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="your-logo.jpeg" alt="Lian Trade Academy Logo" class="logo-img">
-                <div>
-                    <h1>Lian Trade Academy</h1>
-                    <span>Professional Forex Education</span>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">English Courses</a></li>
-                <li><a href="#swahili-program">Swahili Program</a></li>
-                <li><a href="#bio-link">Quick Links</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="payment.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px;">Pay Now</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content fade-in-section">
-                <h1>Master Forex Trading With Professional Education</h1>
-                <p>Join thousands of successful traders who started their journey with Lian Trade Academy. Learn proven strategies, risk management, and market analysis from industry experts.</p>
-                <div class="hero-buttons">
-                    <a href="#courses" class="btn btn-secondary">Explore Courses</a>
-                    <a href="#swahili-program" class="btn btn-outline">Swahili Program</a>
-                    <a href="payment.html" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i> Enroll Now
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-value" id="studentsCount">0</span>
-                        <span class="stat-label">Active Students</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" id="successRate">0%</span>
-                        <span class="stat-label">Success Rate</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" id="coursesCount">0</span>
-                        <span class="stat-label">Trading Courses</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" id="yearsCount">0</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2>Why Choose Lian Trade Academy</h2>
-                <p>We provide everything you need to become a successful forex trader</p>
-            </div>
-            <div class="features-grid">
-                <div class="card feature-card fade-in-section">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Structured Learning Path</h3>
-                    <p>Step-by-step courses from beginner to advanced levels with clear progression and practical assignments.</p>
-                </div>
-                <div class="card feature-card fade-in-section">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Live Market Analysis</h3>
-                    <p>Daily market analysis, trading signals, and real-time chart breakdowns from experienced traders.</p>
-                </div>
-                <div class="card feature-card fade-in-section">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Community Support</h3>
-                    <p>Join our active community of traders, share ideas, and get feedback on your trading strategies.</p>
-                </div>
-                <div class="card feature-card fade-in-section">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Access courses and trading tools on any device, with dedicated mobile apps for on-the-go learning.</p>
-                </div>
-                <div class="card feature-card fade-in-section">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Certification</h3>
-                    <p>Earn recognized certificates upon course completion to validate your trading knowledge and skills.</p>
-                </div>
-                <div class="card feature-card fade-in-section">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>Risk Management Focus</h3>
-                    <p>Learn proper risk management techniques to protect your capital and maximize long-term profitability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Swahili Program Section -->
-    <section class="section swahili-program" id="swahili-program">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2>Swahili Forex Training Program</h2>
-                <p>Hatukufundishi ili uwe trader… Tunakufundisha ili uwe Profitable Trader.</p>
-            </div>
-
-            <div class="courses-grid">
-                <div class="card course-level fade-in-section">
-                    <div class="level-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Basic Level</h3>
-                    <p class="price-tag">USD 10</p>
-                    <p>⏳ Wiki 1 • 🎯 Kuelewa msingi wa Forex kabisa</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> Utangulizi wa Forex</li>
-                        <li><i class="fas fa-check"></i> Currency pairs, pips, lot size</li>
-                        <li><i class="fas fa-check"></i> Jinsi ya kutumia MT5</li>
-                        <li><i class="fas fa-check"></i> Risk management ya msingi</li>
-                        <li><i class="fas fa-check"></i> Demo vs Live account</li>
-                    </ul>
-                    <a href="payment.html?course=basic" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                        Jiunge Sasa
-                    </a>
-                </div>
-
-                <div class="card course-level fade-in-section">
-                    <div class="level-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Intermediate Level</h3>
-                    <p class="price-tag">USD 20</p>
-                    <p>⏳ Wiki 1–2 • 🎯 Analysis & trading plan</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> Price Action & Market Structure</li>
-                        <li><i class="fas fa-check"></i> Supply & Demand</li>
-                        <li><i class="fas fa-check"></i> Chart Patterns</li>
-                        <li><i class="fas fa-check"></i> Fibonacci</li>
-                        <li><i class="fas fa-check"></i> Trading Plan & Risk/Reward</li>
-                    </ul>
-                    <a href="payment.html?course=intermediate" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                        Jiunge Sasa
-                    </a>
-                </div>
-
-                <div class="card course-level fade-in-section">
-                    <div class="level-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Professional Level</h3>
-                    <p class="price-tag">USD 20</p>
-                    <p>⏳ Wiki 3 • 🎯 Kuwa Pro trader mwenye mfumo</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> SMC & ICT Concepts</li>
-                        <li><i class="fas fa-check"></i> News Trading</li>
-                        <li><i class="fas fa-check"></i> Pro-Level Psychology</li>
-                        <li><i class="fas fa-check"></i> Kujenga system ya trading</li>
-                        <li><i class="fas fa-check"></i> Live mentorship</li>
-                    </ul>
-                    <a href="payment.html?course=professional" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                        Jiunge Sasa
-                    </a>
-                </div>
-            </div>
-
-            <!-- Package Deal -->
-            <div class="card fade-in-section" style="margin-top: 40px; background: rgba(255,255,255,0.1); border-color: var(--secondary);">
-                <div style="text-align: center;">
-                    <h3 style="color: var(--secondary); margin-bottom: 10px;">🔥 DISCOUNT PACKAGE</h3>
-                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--text); margin-bottom: 15px;">Basic + Intermediate + Professional + Propfirm = <span style="color: var(--secondary);">USD 90</span></p>
-                    <p style="color: var(--muted); margin-bottom: 20px;">🪙 Unaweza kulipa kwa awamu: <b>30 – 30 – 30</b><br/></p>
-                    <a href="payment.html?package=complete-swahili" class="btn btn-primary" style="font-size: 16px; padding: 15px 30px; display: inline-block; text-decoration: none;">
-                        <i class="fas fa-shopping-cart"></i> Jisajili Sasa
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- English Courses Section -->
-    <section class="section courses-section" id="courses">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2>English Trading Courses</h2>
-                <p>Comprehensive forex education for all skill levels</p>
-            </div>
-            <div class="courses-grid">
-                <div class="card course-level fade-in-section">
-                    <div class="level-icon" style="background: rgba(91,140,255,0.1); color: var(--primary);">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Beginner Course</h3>
-                    <p class="price-tag">$10</p>
-                    <p>⏳ 1 Week • 🎯 Start your trading journey</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> Forex Basics & Terminology</li>
-                        <li><i class="fas fa-check"></i> How to Read Charts</li>
-                        <li><i class="fas fa-check"></i> Introduction to Technical Analysis</li>
-                        <li><i class="fas fa-check"></i> Risk Management Fundamentals</li>
-                        <li><i class="fas fa-check"></i> Demo Account Setup Guide</li>
-                    </ul>
-                    <a href="payment.html?course=beginner-english" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                        Enroll Now
-                    </a>
-                </div>
-                <div class="card course-level fade-in-section">
-                    <div class="level-icon" style="background: rgba(37,211,102,0.1); color: #25d366;">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Intermediate Course</h3>
-                    <p class="price-tag">$20</p>
-                    <p>⏳ 2 Weeks • 🎯 Advance your trading skills</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> Advanced Technical Analysis</li>
-                        <li><i class="fas fa-check"></i> Price Action Strategies</li>
-                        <li><i class="fas fa-check"></i> Fundamental Analysis</li>
-                        <li><i class="fas fa-check"></i> Trading Psychology</li>
-                        <li><i class="fas fa-check"></i> Building a Trading Plan</li>
-                    </ul>
-                    <a href="payment.html?course=intermediate-english" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                        Enroll Now
-                    </a>
-                </div>
-                <div class="card course-level fade-in-section">
-                    <div class="level-icon" style="background: rgba(255,107,0,0.1); color: var(--secondary);">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Advanced Course</h3>
-                    <p class="price-tag">$20</p>
-                    <p>⏳ 3 Weeks • 🎯 Master professional trading</p>
-                    <ul class="course-features">
-                        <li><i class="fas fa-check"></i> Advanced Risk Management</li>
-                        <li><i class="fas fa-check"></i> Algorithmic Trading Basics</li>
-                        <li><i class="fas fa-check"></i> Portfolio Management</li>
-                        <li><i class="fas fa-check"></i> Proprietary Trading Strategies</li>
-                        <li><i class="fas fa-check"></i> 1-on-1 Mentorship Sessions</li>
-                    </ul>
-                    <a href="payment.html?course=advanced-english" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                        Enroll Now
-                    </a>
-                </div>
-            </div>
-            
-            <!-- English Package Deal -->
-            <div class="card fade-in-section" style="margin-top: 40px; background: linear-gradient(135deg, rgba(42,77,142,0.1), rgba(255,107,0,0.1)); border-color: var(--primary);">
-                <div style="text-align: center;">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">🔥 ENGLISH COMPLETE PACKAGE</h3>
-                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--text); margin-bottom: 15px;">Beginner + Intermediate + Advanced = <span style="color: var(--primary);">USD 40</span></p>
-                    <p style="color: var(--muted); margin-bottom: 20px;">🪙 Save $10 when you purchase all three English courses together</p>
-                    <a href="payment.html?package=complete-english" class="btn btn-secondary" style="font-size: 16px; padding: 15px 30px; display: inline-block; text-decoration: none;">
-                        <i class="fas fa-shopping-cart"></i> Get Complete Package
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bio Link Section -->
-    <section class="section bio-link-section" id="bio-link">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2 style="color: #00ffcc;">Quick Trading Links</h2>
-                <p style="color: var(--muted);">All essential trading resources in one place</p>
-            </div>
-            
-            <div class="bio-container fade-in-section">
-                <div class="bio-profile">
-                    <img src="your-logo.jpeg" alt="Lian Trade Academy Logo">
-                </div>
-
-                <h1 style="color: var(--text); margin-bottom: 5px;">LianTradeAcademy</h1>
-                <p class="tagline" style="color: var(--muted); margin-bottom: 25px;">Forex & Crypto Trader | Smart Money Concepts</p>
-
-                <div class="bio-links">
-                    <a href="payment.html" class="bio-link">
-                        <i class="fas fa-paper-plane"></i> Join Premium Signal Setup
-                    </a>
-                    <a href="https://www.youtube.com/@LianAcademy1" class="bio-link" target="_blank">
-                        <i class="fab fa-youtube"></i> YouTube Trading Lessons
-                    </a>
-                    <a href="https://chat.whatsapp.com/DkCwr423Tur1LqcONTMDr2?mode=ems_copy_t" class="bio-link" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Trading Community
-                    </a>
-                    <a href="https://deriv.partners/rx?sidc=4C462192-E6A2-45A1-B35D-E190B2FDB3AC&utm_campaign=dynamicworks&utm_medium=affiliate&utm_source=CU153100" class="bio-link" target="_blank">
-                        <i class="fas fa-chart-line"></i> Trade With My Broker
-                    </a>
-                    <a href="https://liantradeacademy.blogspot.com/2026/01/how-the-forex-market-works.html" class="bio-link" target="_blank">
-                        <i class="fas fa-book"></i> Free Trading Course
-                    </a>
-                </div>
-
-                <div class="bio-footer">
-                    ⚠️ Trading involves risk. Trade responsibly.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section faq-section" id="faq">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2>Frequently Asked Questions</h2>
-                <p>Answers to common questions about our training programs</p>
-            </div>
-
-            <div class="faq-grid">
-                <div class="faq-item fade-in-section" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
-                        <span>When does the program start?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Training starts immediately after payment confirmation. You will receive access to course materials within 24 hours.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in-section" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
-                        <span>Can I pay in installments?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! We offer installment plans for our complete packages. Contact us for more details.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in-section" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
-                        <span>What exactly will I get after paying?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You will get access to Zoom classes, PDF notes, video recordings, private group, and daily support.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in-section" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
-                        <span>Can I join just one level?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, you can choose one level (Basic, Intermediate, or Professional). But there's a discount for the complete package.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item fade-in-section" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
-                        <span>What payment methods do you accept?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We accept mobile money (M-Pesa, Tigo Pesa, Airtel Money), bank transfers, and cryptocurrency payments.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item fade-in-section" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
-                        <span>Is there a refund policy?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer a 7-day money-back guarantee if you're not satisfied with the course content after enrollment.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2>Student Success Stories</h2>
-                <p>What our students say about their trading journey with us</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="card testimonial-card fade-in-section">
-                    <div class="testimonial-text">
-                        "I went from knowing nothing about forex to consistently profitable in just 6 months. The structured courses and community support made all the difference."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MJ</div>
-                        <div>
-                            <h4>Michael Johnson</h4>
-                            <p>Forex Trader | 2+ years experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card testimonial-card fade-in-section">
-                    <div class="testimonial-text">
-                        "The risk management section alone was worth the price of the course. I've protected my capital during volatile markets thanks to what I learned here."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SW</div>
-                        <div>
-                            <h4>Sarah Williams</h4>
-                            <p>Part-time Trader | 1 year experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card testimonial-card fade-in-section">
-                    <div class="testimonial-text">
-                        "As a complete beginner, I was intimidated by forex trading. The beginner course broke everything down so clearly. Now I trade confidently with a solid strategy."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">DC</div>
-                        <div>
-                            <h4>David Chen</h4>
-                            <p>Beginner Trader | 6 months experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Risk Disclaimer -->
-    <section class="section">
-        <div class="container">
-            <div class="risk-disclaimer fade-in-section">
-                <h3><i class="fas fa-exclamation-triangle"></i> Risk Disclaimer</h3>
-                <p>Trading foreign exchange on margin carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange, you should carefully consider your investment objectives, level of experience, and risk appetite.</p>
-                <p>There is a possibility that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with foreign exchange trading and seek advice from an independent financial advisor if you have any doubts.</p>
-                <p>Past performance is not indicative of future results. Any examples or testimonials on this website are not typical and do not guarantee future performance or success.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-title fade-in-section">
-                <h2>Contact Us</h2>
-                <p>Get in touch for course inquiries or trading advice</p>
-            </div>
-            <div class="contact-form fade-in-section">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" placeholder="What is this regarding?">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" placeholder="Enter your message here..."></textarea>
-                </div>
-                <button class="btn btn-primary" style="width: 100%;" onclick="submitContactForm()">Send Message</button>
-            </div>
-
-            <div class="card fade-in-section" style="margin-top: 40px; background: var(--card-bg); border-color: var(--border-color);">
-                <div style="font-weight: 900; font-size: 18px; margin-bottom: 20px; color: var(--text);">📋 How to Enroll</div>
-                
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 200px;">
-                        <ol style="margin: 0 0 0 20px; padding: 0; color: var(--muted); font-size: 14px; line-height: 1.8;">
-                            <li>Select your preferred course or package</li>
-                            <li>Click "Enroll Now" or "Jiunge Sasa" button</li>
-                            <li>Complete payment on our secure payment page</li>
-                            <li>Receive course access within 24 hours</li>
-                            <li>Start learning and become a profitable trader!</li>
-                        </ol>
-                    </div>
-                    
-                    <div style="flex: 1; min-width: 200px;">
-                        <div style="background: rgba(255,107,0,0.1); border-radius: 12px; padding: 20px; border: 1px solid rgba(255,107,0,0.2);">
-                            <div style="font-weight: bold; color: var(--secondary); margin-bottom: 10px;">💳 Quick Enrollment</div>
-                            <div style="font-size: 20px; font-weight: 900; color: var(--text); margin-bottom: 15px;">Ready to Start?</div>
-                            <a href="payment.html" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; text-align: center;">
-                                <i class="fas fa-shopping-cart"></i> Go to Payment
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
-                    <a href="payment.html" class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i> Enroll Now
-                    </a>
-                    <button class="btn btn-secondary" onclick="copyContactInfo()">
-                        <i class="fas fa-copy"></i> Copy Contact Info
-                    </button>
-                    <a href="#courses" class="btn btn-outline">View Courses</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Lian Trade Academy</h3>
-                    <p style="color: var(--muted);">Professional forex trading education for traders of all levels. Learn proven strategies, risk management, and market analysis.</p>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@LianAcademy1" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://t.me/yourtelegram" target="_blank"><i class="fab fa-telegram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#courses">English Courses</a></li>
-                        <li><a href="#swahili-program">Swahili Program</a></li>
-                        <li><a href="#bio-link">Quick Links</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="payment.html">Payment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Courses</h3>
-                    <ul class="footer-links">
-                        <li><a href="payment.html?course=basic">Basic Level (Swahili)</a></li>
-                        <li><a href="payment.html?course=intermediate">Intermediate Level (Swahili)</a></li>
-                        <li><a href="payment.html?course=professional">Professional Level (Swahili)</a></li>
-                        <li><a href="payment.html?course=beginner-english">Beginner Course (English)</a></li>
-                        <li><a href="payment.html?course=intermediate-english">Intermediate Course (English)</a></li>
-                        <li><a href="payment.html?course=advanced-english">Advanced Course (English)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</li>
-                        <li><i class="fas fa-phone"></i> +255 749 652 933</li>
-                        <li><i class="fas fa-envelope"></i>liantradeacademy@gmail.com</li>
-                        <li><i class="fas fa-question-circle"></i> Support: 0749 652 933</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 Lian Trade Academy. All rights reserved. | <a href="#" style="color: var(--muted);">Privacy Policy</a> | <a href="#" style="color: var(--muted);">Terms & Conditions</a> | <a href="#" style="color: var(--muted);">Risk Disclaimer</a> | <a href="payment.html" style="color: var(--secondary);">Payment Portal</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Color Mode Toggle Button (Floating) -->
-    <div class="color-mode-float" id="colorModeToggle" title="Toggle Dark/Light Mode">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </div>
-
-    <!-- WhatsApp Float Button (for general inquiries only) -->
-    <a href="https://wa.me/255749652933?text=Hello%20Lian%20Trade%20Academy,%20I%20have%20a%20question%20about%20your%20courses" 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Contact on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
+    <!-- Optional JavaScript to update countdown (static now, but can be activated) -->
     <script>
-        // ===== COLOR MODE TOGGLE FUNCTIONALITY =====
-        const colorModeToggle = document.getElementById('colorModeToggle');
-        const body = document.body;
+        // For a real countdown, you can set a target date here.
+        // This is just a placeholder – you can remove or uncomment to make it dynamic.
+        /*
+        (function() {
+           const targetDate = new Date("March 2, 2026 12:00:00").getTime();
 
-        // Check for saved theme preference or default to dark
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        
-        // Apply saved theme
-        if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-            console.log('Loaded Light Mode from localStorage');
-        } else {
-            console.log('Loaded Dark Mode from localStorage');
-        }
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
 
-        // Toggle color mode
-        colorModeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            
-            if (body.classList.contains('light-mode')) {
-                localStorage.setItem('theme', 'light');
-                showToast('Switched to Light Mode 🌞');
-                console.log('Switched to Light Mode');
-            } else {
-                localStorage.setItem('theme', 'dark');
-                showToast('Switched to Dark Mode 🌙');
-                console.log('Switched to Dark Mode');
-            }
-            
-            // Update header background for current scroll position
-            updateHeaderBackground();
-        });
-
-        // Update header background based on scroll and theme
-        function updateHeaderBackground() {
-            const header = document.getElementById('header');
-            const isLightMode = body.classList.contains('light-mode');
-            
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = isLightMode 
-                    ? 'rgba(255, 255, 255, 0.95)' 
-                    : 'rgba(10, 10, 26, 0.95)';
-            } else {
-                header.style.backgroundColor = isLightMode 
-                    ? 'rgba(255, 255, 255, 0.9)' 
-                    : 'rgba(10, 10, 26, 0.9)';
-            }
-        }
-
-        // ===== EXISTING JAVASCRIPT FUNCTIONALITY =====
-        
-        // Mobile Menu Toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('active');
-        });
-
-        // Animated counter for stats
-        function animateCounter(id, start, end, duration) {
-            let obj = document.getElementById(id);
-            let startTime = null;
-            const step = (timestamp) => {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = id === 'successRate' ? value + '%' : value;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
+                if (distance < 0) {
+                    document.querySelector(".countdown").innerHTML = "<p>Tumeisha! Tovuti iko tayari.</p>";
+                    return;
                 }
-            };
-            window.requestAnimationFrame(step);
-        }
 
-        // Start counter animations when page loads
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                animateCounter('studentsCount', 0, 12500, 2000);
-                animateCounter('successRate', 0, 94, 2000);
-                animateCounter('coursesCount', 0, 6, 1500);
-                animateCounter('yearsCount', 0, 8, 1500);
-            }, 500);
-        });
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Scroll animations
-        const fadeInElements = document.querySelectorAll('.fade-in-section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        fadeInElements.forEach(el => observer.observe(el));
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.getElementById('navMenu').classList.remove('active');
-                }
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            updateHeaderBackground();
-        });
-
-        // Initialize header background
-        updateHeaderBackground();
-
-        // FAQ Toggle
-        function toggleFAQ(element) {
-            element.classList.toggle('active');
-            const icon = element.querySelector('.fa-chevron-down');
-            if (element.classList.contains('active')) {
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
+                document.querySelectorAll(".time-number")[0].textContent = days.toString().padStart(2, '0');
+                document.querySelectorAll(".time-number")[1].textContent = hours.toString().padStart(2, '0');
+                document.querySelectorAll(".time-number")[2].textContent = minutes.toString().padStart(2, '0');
+                document.querySelectorAll(".time-number")[3].textContent = seconds.toString().padStart(2, '0');
             }
-        }
 
-        // Copy contact information
-        function copyContactInfo() {
-            const contactInfo = "Lian Trade Academy\nPhone: +255 749 652 933\nEmail: info@liantradeacademy.com\nWebsite: liantradeacademy.com";
-            navigator.clipboard.writeText(contactInfo).then(() => {
-                showToast("✅ Contact information copied to clipboard!");
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-                showToast("❌ Failed to copy contact info");
-            });
-        }
-
-        // Contact form submission
-        function submitContactForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all fields before submitting.');
-                return;
-            }
-            
-            // Simulate form submission
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('subject').value = '';
-            document.getElementById('message').value = '';
-            
-            // Show success message
-            showToast('Thank you for your message! We will get back to you within 24 hours.');
-        }
-
-        // Toast notification
-        function showToast(message) {
-            // Remove existing toasts
-            const existingToasts = document.querySelectorAll('.toast-notification');
-            existingToasts.forEach(toast => toast.remove());
-            
-            const toast = document.createElement('div');
-            toast.className = 'toast-notification';
-            const isLightMode = body.classList.contains('light-mode');
-            
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 180px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: ${isLightMode ? 'rgba(0,0,0,0.85)' : 'rgba(0,0,0,0.9)'};
-                color: white;
-                padding: 12px 24px;
-                border-radius: 8px;
-                font-weight: 600;
-                z-index: 9999;
-                backdrop-filter: blur(10px);
-                border: 1px solid var(--border-color);
-                animation: fadeInOut 2s ease-in-out;
-                white-space: nowrap;
-                max-width: 90%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                text-align: center;
-            `;
-            
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                if (toast.parentNode) {
-                    toast.remove();
-                }
-            }, 2000);
-        }
-
-        // Add CSS for toast animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInOut {
-                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-                15% { opacity: 1; transform: translateX(-50%) translateY(0); }
-                85% { opacity: 1; transform: translateX(-50%) translateY(0); }
-                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Update ticker data periodically
-        function updateTickerData() {
-            const tickerItems = document.querySelectorAll('.ticker-item');
-            const symbols = ['BTC', 'ETH', 'EUR/USD', 'GBP/USD', 'XAU/USD', 'NASDAQ'];
-            const isLightMode = body.classList.contains('light-mode');
-            
-            tickerItems.forEach((item, index) => {
-                const symbolIndex = index % symbols.length;
-                const symbol = symbols[symbolIndex];
-                
-                // Simulate price changes
-                const change = (Math.random() - 0.5) * 3;
-                const arrow = change >= 0 ? '↗' : '↘';
-                const color = change >= 0 ? '#2a9d8f' : '#ff6b35';
-                
-                // Format based on symbol
-                let price;
-                if (symbol.includes('BTC')) price = (65432 + change * 100).toFixed(2);
-                else if (symbol.includes('ETH')) price = (3456 + change * 10).toFixed(2);
-                else if (symbol.includes('EUR')) price = (1.0875 + change / 100).toFixed(4);
-                else if (symbol.includes('GBP')) price = (1.2742 + change / 100).toFixed(4);
-                else if (symbol.includes('XAU')) price = (2345 + change).toFixed(2);
-                else price = (16543 + change * 10).toFixed(2);
-                
-                item.innerHTML = `${symbol}: $${price} <span style="color: ${color};">${arrow}</span>`;
-            });
-        }
-
-        // Initialize ticker
-        updateTickerData();
-        setInterval(updateTickerData, 10000);
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMenu = document.getElementById('navMenu');
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            
-            if (navMenu.classList.contains('active') && 
-                !navMenu.contains(event.target) && 
-                !mobileMenuBtn.contains(event.target)) {
-                navMenu.classList.remove('active');
-            }
-        });
-
-        // Add click effect to logo
-        document.querySelector('.logo-img').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Track button clicks for analytics
-        document.addEventListener('DOMContentLoaded', function() {
-            const enrollButtons = document.querySelectorAll('a[href*="payment.html"]');
-            enrollButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const course = this.getAttribute('href').split('?')[1] || 'general';
-                    console.log(`Enrollment click: ${course}`);
-                    // You can add analytics tracking here
-                });
-            });
-        });
-        
-        // Image fallback for bio link profile
-        document.querySelector('.bio-profile img').onerror = function() {
-            this.style.display = 'none';
-            const fallback = document.createElement('div');
-            fallback.innerHTML = 'LA';
-            fallback.style.cssText = `
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
-                font-size: 40px;
-                font-weight: bold;
-                color: #000;
-                background: linear-gradient(135deg, var(--primary), var(--secondary));
-                color: white;
-            `;
-            this.parentNode.appendChild(fallback);
-        };
-
-        // Add keyboard shortcuts for color mode
-        document.addEventListener('keydown', function(e) {
-            // Ctrl+Shift+L to toggle light/dark mode
-            if (e.ctrlKey && e.shiftKey && e.key === 'L') {
-                e.preventDefault();
-                colorModeToggle.click();
-            }
-        });
-
-        // System preference detection
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        const prefersLightScheme = window.matchMedia('(prefers-color-scheme: light)');
-        
-        // If no theme is saved in localStorage, check system preference
-        if (!localStorage.getItem('theme')) {
-            if (prefersDarkScheme.matches) {
-                // System prefers dark mode
-                body.classList.remove('light-mode');
-                console.log('Applied system preference: Dark Mode');
-            } else if (prefersLightScheme.matches) {
-                // System prefers light mode
-                body.classList.add('light-mode');
-                console.log('Applied system preference: Light Mode');
-            }
-        }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+        */
     </script>
 </body>
 </html>
